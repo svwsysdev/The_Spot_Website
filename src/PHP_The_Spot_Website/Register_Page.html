@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/Global.css">
+    <title>The Spot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/Register.js"></script>
+</head>
+
+<body> 
+    <div class="wrapper flex">
+        <div class="imagediv" style="height: 450px;margin-top:10px; max-height: 450px;">
+            <img style="margin-top: 5%; border-radius: 0%;" src="/images/thespotlogin.png" />
+            <img style="margin-top: 15%; border-radius: 0%; height: 25%;" src="/images/images.png" />
+        </div>
+        <div class="wrapit" style="max-height: 450px;">
+            <form class="loginform" action="php/RegisterScript.php" method="POST">
+                <p style="font-size: small; margin: 0px;"> COMPLETE THE FORM BELOW TO REGISTER.</p>
+                <hr style="margin: 2px;">
+                <div class="leftalignerreg">
+                    <label for="contactnumberId">Name:                      
+                    </label>
+                </div>
+                <div class="rightalignerreg">
+                    <input class="loginInput" type="text" placeholder="Name" name="name" required />
+                </div>
+                <div class="leftalignerreg">
+                    <label for="contactnumberId">Surname:                       
+                    </label>
+                </div>
+                <div class="rightalignerreg">
+                    <input class="loginInput" type="text" placeholder="Surname" name="surname" required />
+                </div>
+                <div class="leftalignerreg">
+                    <label for="contactnumberId">E-Mail:                       
+                    </label>
+                </div>
+                <div class="rightalignerreg">
+                    <input class="loginInput" type="text" placeholder="Email Address" name="email" id="emailId" required />
+                </div>
+                <div class="leftalignerreg">
+                    <label for="contactnumberId">Phone No.                       
+                    </label>
+                </div>
+                <div class="rightalignerreg">
+                    <input class="loginInput" type="text" placeholder="Contact Number" name="contactnumber" required />
+                </div>
+                <div class="leftalignerreg">
+                    <label for="contactnumberId">Password:                      
+                    </label>
+                </div>
+                <div class="rightalignerreg">
+                    <input 
+                        class="loginInput" 
+                        type="password" 
+                        placeholder="Password" 
+                        Title = "Must contain at least one number, 
+                                 and one uppercase and lowercase letter, 
+                                 and at least 8 or more characters"
+                        name="password" 
+                        id="passwordId" 
+                        required />
+                </div>
+                <div class="leftalignerreg">
+                    <label for="contactnumberId">Confirm Password:                     
+                    </label>
+                </div>
+                <div class="rightalignerreg">
+                    <input 
+                        class="loginInput" 
+                        type="password" 
+                        placeholder="Confirm Password"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,})" 
+                        name="cpassword" 
+                        id="cpasswordId" 
+                        required>
+                </div>
+                <hr style="margin: 5px;">
+                <div>
+                    <input 
+                        class="loginInputBtn" 
+                        type="submit" 
+                        value="Register" 
+                        onclick="validatePassword()"
+                        name="submit" />
+                </div>
+                <div>
+                    <input 
+                        class="loginInputBtn" 
+                        id="loginbtn" 
+                        type="button" 
+                        onclick="loginClick()" 
+                        name="login"
+                        value="Back to Login" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

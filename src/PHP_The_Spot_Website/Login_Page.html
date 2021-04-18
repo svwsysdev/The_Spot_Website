@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/Global.css">
+  <title>The Spot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/Login.js"></script>
+</head>
+
+<body>
+  <script type="text/javascript">
+    throw401Error();
+  </script>
+  <div class="wrapper flex">
+    <div class="imagediv">
+      <img style="margin-top: 5%; border-radius: 0%;" src="/images/thespotlogin.png"  />
+    </div>
+    <div >
+      <form class="loginform" action="php/LoginScript.php" method="POST">
+        Please Login!
+        <hr>
+        <div>
+          <input class="loginInputrev" type="text" placeholder="Email address" name="username" id="usernameId" required />
+        </div>
+        <div>
+          <input 
+          class="loginInputrev" 
+          type="password" 
+          placeholder="Password"
+          Title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+          name="password" 
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,})" 
+          id="passwordId" 
+          required />
+        </div>
+        <div>
+          <input class="loginInputBtn"  type="submit" value="Login" name="submit" />
+        </div>
+        <div>
+          <input class="loginInputBtn"  id="registerbtn" type="button" onclick="registerClick()" name="register" value="Register" />
+        </div>
+        <div>
+          <label id="returnLBL" onload="throw401Error()" style="visibility: hidden;">
+            Check your password, or account does not exist!
+          </label>
+        </div>
+      </form>
+      <div class="changepasslogin">
+        <form action="/php/ForgetPassword.php" method="POST">
+          <input class="loginInputBtn" type="submit" value="Change Password">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
